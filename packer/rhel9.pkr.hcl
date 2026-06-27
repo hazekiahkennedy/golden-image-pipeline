@@ -48,7 +48,7 @@ source "azure-arm" "rhel9_cis" {
   image_version   = "latest"
 
   os_type         = "Linux"
-  os_disk_size_gb = 30
+  os_disk_size_gb = 64
 
   managed_image_name                = "rhel-9-cis-{{timestamp}}"
   managed_image_resource_group_name = var.resource_group
