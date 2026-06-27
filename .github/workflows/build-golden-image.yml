@@ -47,10 +47,9 @@ jobs:
         env:
           PKR_VAR_subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           PKR_VAR_resource_group:  ${{ secrets.AZURE_RESOURCE_GROUP }}
-        run: packer validate -var-file=variables.pkrvars.hcl rhel9.pkr.hcl
+        run: packer validate rhel9.pkr.hcl
 
       # ── Build the image
-      # PKR_VAR_ prefixed env vars are automatically picked up by Packer
       - name: Packer Build
         working-directory: packer
         env:
@@ -63,7 +62,7 @@ jobs:
             -color=false \
             -timestamp-ui \
             rhel9.pkr.hcl
-
+            
       # ── Upload the manifest as a build artifact
       - name: Upload Build Manifest
         uses: actions/upload-artifact@v4
