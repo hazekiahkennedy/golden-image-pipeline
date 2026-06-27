@@ -40,9 +40,8 @@ source "azure-arm" "rhel9_cis" {
   use_azure_cli_auth = true
 
   subscription_id = var.subscription_id
-  location        = var.location
   vm_size         = var.build_vm_size
-
+  build_resource_group_name = var.resource_group
   image_publisher = "RedHat"
   image_offer     = "RHEL"
   image_sku       = "9-lvm-gen2"
