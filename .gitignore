@@ -1,0 +1,24 @@
+# Terraform
+*.tfvars
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Packer
+*.pkrvars.hcl
+packer/manifest.json
+packer-plugin-cache/
+
+# Azure credentials
+*.pem
+*.key
+
+# OS
+.DS_Store
+Thumbs.db

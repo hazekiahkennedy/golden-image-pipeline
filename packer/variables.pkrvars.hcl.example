@@ -1,0 +1,6 @@
+subscription_id  = "your-subscription-id"
+resource_group   = "rg-golden-images-yourname"
+gallery_name     = "gal_golden_images_yourname"
+image_definition = "rhel-9-cis"
+location         = "West US 2"
+build_vm_size    = "Standard_D2s_v3"
