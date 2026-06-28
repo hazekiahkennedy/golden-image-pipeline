@@ -23,8 +23,10 @@ rm -rf /tmp/* /var/tmp/*
 # Critical: without this, all VMs cloned from this image share the same
 # machine ID which causes systemd and other services to behave unexpectedly
 truncate -s 0 /etc/machine-id
-rm -f /var/lib/dbus/machine-id
-ln -s /etc/machine-id /var/lib/dbus/machine-id
+if [ -d /var/lib/dbus ]; then
+  rm -f /var/lib/dbus/machine-id
+  ln -s /etc/machine-id /var/lib/dbus/machine-id
+fi
 
 # Sync filesystem
 sync
